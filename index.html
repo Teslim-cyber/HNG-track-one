@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Tech Goals</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="background-container">
+			<div class="yellow-section">
+				<img
+					src="../img/teslim.jpg"
+					alt="Profile Picture"
+					class="profile-pic"
+					data-testid="slackProfilePicture"
+				/>
+			</div>
+			<div class="black-section">
+				<div class="content">
+					<h1 class="highlight-text" data-testid="slackDisplayName">
+						I'm Teslim.<br />A Frontend Developer <br />
+						My Tech Goals In Two Years
+					</h1>
+					<section>
+						<ul>
+							<li>
+								Be a master of Javascript and it library
+								React.js
+							</li>
+							<li>Get a Top Ranking Certificate in the Tech</li>
+							<li>
+								Work on a very big and dynamic project with a
+								team of Developers
+							</li>
+							<li>
+								Contribute to open source projects and build a
+								strong GitHub profile
+							</li>
+							<li>Teach and montor newbies in tech</li>
+						</ul>
+					</section>
+					<button class="more-btn">Slack Information:</button>
+					<p>
+						Slack Display Name:
+						<span data-testid="slackDisplayName">@Teslim</span>
+					</p>
+					<p>
+						Slack Email:
+						<span data-testid="slackEmail"
+							>adelakunteslim@gmail.com</span
+						>
+					</p>
+					<p data-testid="currentTimeUTC"></p>
+					<p data-testid="currentDay"></p>
+					<div class="links">
+						<a href="https://hng.tech/learn" data-testid="hngLink"
+							>Learn at HNG.tech</a
+						>
+						<a href="https://keyword.dog" data-testid="keywordLink"
+							>Keyword Dog</a
+						>
+						<a
+							href="https://scrapeanyweb.site"
+							data-testid="scrapeanywebLink"
+							>Scrape Any Web</a
+						>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			function updateTime() {
+				const currentTimeUTC = new Date().toUTCString();
+				document.querySelector(
+					'[data-testid="currentTimeUTC"]'
+				).textContent = currentTimeUTC;
+
+				const days = [
+					"Sunday",
+					"Monday",
+					"Tuesday",
+					"Wednesday",
+					"Thursday",
+					"Friday",
+					"Saturday",
+				];
+				const currentDay = days[new Date().getUTCDay()];
+				document.querySelector(
+					'[data-testid="currentDay"]'
+				).textContent = currentDay;
+			}
+
+			setInterval(updateTime, 1000);
+			updateTime();
+		</script>
+	</body>
+</html>
